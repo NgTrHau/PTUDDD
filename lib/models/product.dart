@@ -19,7 +19,7 @@ class Product {
     String? id,
     String? title,
     String? description,
-    String? price,
+    double? price,
     String? imageURL,
     bool? isFavorite,
   }) {
