@@ -10,7 +10,7 @@ class CartManager {
     ),
   };
 
-  int get productsCount {
+  int get productCount {
     return _items.length;
   } 
 
