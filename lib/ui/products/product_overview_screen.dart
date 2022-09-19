@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'products_grid.dart';
 
-enum FilerOptions { favorites, all }
+enum FilterOptions { favorites, all }
 
 class ProductsOverviewScreen extends StatefulWidget {
   const ProductsOverviewScreen({super.key});
@@ -39,9 +39,9 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
 
   Widget buildProductFilterMenu() {
     return PopupMenuButton(
-      onSelected: (FilerOptions selectedValue) {
+      onSelected: (FilterOptions selectedValue) {
         setState(() {
-          if (selectedValue == FilerOptions.favorites) {
+          if (selectedValue == FilterOptions.favorites) {
             _showOnlyFavorites = true;
           } else {
             _showOnlyFavorites = false;
@@ -53,11 +53,11 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       ),
       itemBuilder: (ctx) => [
         const PopupMenuItem(
-          value: FilerOptions.favorites,
+          value: FilterOptions.favorites,
           child: Text("Only favorites"),
         ),
         const PopupMenuItem(
-          value: FilerOptions.all,
+          value: FilterOptions.all,
           child: Text('Show All'),
         )
       ]
