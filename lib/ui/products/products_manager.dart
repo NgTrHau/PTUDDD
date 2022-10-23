@@ -38,6 +38,15 @@ class ProductsManager with ChangeNotifier {
             'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
         isFavorite: true,
       ),
+      Product(
+        id: 'p5',
+        title: 'Rei Flush',
+        description: 'A character from Neon Genesis Evangelion.',
+        price: 19.99,
+        imageURL:
+            'https://i.ebayimg.com/images/g/-8YAAOSwwlRiqkyg/s-l500.jpg',
+        isFavorite: true,
+      ),
     ];
 
     int get itemCount {

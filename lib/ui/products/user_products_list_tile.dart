@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/product.dart';
 import 'package:provider/provider.dart';
+import 'edit_product_screen.dart';
 import 'products_manager.dart';
 
 class UserProductListTile extends StatelessWidget {
@@ -33,7 +34,10 @@ class UserProductListTile extends StatelessWidget {
     return IconButton(
       icon: const Icon(Icons.edit),
       onPressed: () async {
-        print('Delete a product');
+        Navigator.of(context).pushNamed(
+          EditProductScreen.routeName,
+          arguments: product.id,
+        );
       },
       color: Theme.of(context).primaryColor,
     );

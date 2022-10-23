@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'ui/screen.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -50,6 +51,18 @@ class MyApp extends StatelessWidget {
               builder: (ctx) {
                 return ProductDetailScreen(
                   ctx.read<ProductsManager>().findById(productId),
+                );
+              }
+            );
+          }
+          if (settings.name == EditProductScreen.routeName) {
+            final productId = settings.arguments as String?;
+            return MaterialPageRoute(
+              builder: (ctx) {
+                return EditProductScreen(
+                  productId != null
+                  ? ctx.read<ProductsManager>().findById(productId)
+                  : null,
                 );
               }
             );
